@@ -3,7 +3,8 @@ Prueba de validación de conocimiento
 Bienvenido. 
 Esta es la prueba técnica para validar mis conocimientos y fortalezas en el mundo de Backend y frontend utilizando el framework de laravel, vue.js, y con base de datos Postgresql, demostrando así mi capacidad de arquitectura de codigo, patrones de diseño, clean code, normas SOLID, REST y demás para el mundo de It Business.
 
-#Contenido
+# Contenido
+-Proyecto a realizar
 -Modelo relacional base de datos.
 -Patron de diseño.
 -Herramientas de desarrollo utilizadas.
@@ -11,7 +12,17 @@ Esta es la prueba técnica para validar mis conocimientos y fortalezas en el mun
 -Maual de uso
 -Como descargar y ponerlo a correr en local
 
-#Modelo relacional base de datos
+# Proyecto a realizar
+El gerente de operaciones 
+hoteleras requiere un sistema que permita ingresar los hoteles con los que cuenta la compañía, 
+además de los nombres básicos del hotel, se deben ingresar los datos tributarios básicos.
+Adicional a eso el gerente hotelero requiere que a los hoteles con los que cuenta la compañía, 
+se les pueda asignar los tipos de habitación (Estándar, Junior y Suite). Este sistema debe validar 
+que únicamente se pueda asignar las acomodaciones según el tipo:
+- Si el tipo de habitación es Estándar: la acomodación debe ser Sencilla o Doble.
+- Si el tipo de habitación es Junior: la acomodación debe ser Triple o Cuádruple
+- Si el tipo de habitación es Suite: la acomodación debe ser Sencilla, Doble o Triple
+# Modelo relacional base de datos
 Se toma como tabla principal "hotel" en la cual encapsulamos todos los datos requeridos, los cuales son los datos tributarios basicos de un hotel, creamos la tabla "acoomodation" en la cual se encapsula la informacion de tanto el tipo de habitacion con la acomodacion de la misma, con las cuales se crea llave foranea en la cual vemos relacion de una a muchas teniendo como 1 el id del hotel y mucas los tipos y acomodaciones que se le puede dar a la habitacion, se genera la migracion de bases genericas de laravel, y de igual manera se crean a partir de script por migraciones para una sencilla ejecucion con el comando php artisan migration.
 
 ![image](https://user-images.githubusercontent.com/79348915/223677687-696cbb77-0d61-4b16-a011-bc31a1d099f3.png)
@@ -19,10 +30,10 @@ Se toma como tabla principal "hotel" en la cual encapsulamos todos los datos req
 ![image](https://user-images.githubusercontent.com/79348915/223678094-d3aa2f05-5749-42c0-81c8-4b8e4a5f975d.png)
 
 
-#Patrón de diseño:
+# Patrón de diseño:
 Para la arquitectura se implementaron conceptos de patron repositorio para no depender de la arquitectura por defecto de laravel, la cual es MVC. Utilizando patron repositorio un mecanismo para encapsular el comportamiento de almacenamiento, obtención y búsqueda, de una forma similar a una colección de objetos (parecida a una lista o arreglo), centralizando responsabilidades a cada una de las clases, así siguiendo el principio de responsabilidad unica, que se implementa en dichas clases que cumplen más de una responsabilidad, como controladores, modelos de dominio, repositorios entre otros. Se implementaron normas REST para el API.
 
-#HERRAMIENTAS DE DESARROLLO UTILIZADAS
+# HERRAMIENTAS DE DESARROLLO UTILIZADAS
 Laravel 8 Framework 
 PHP 7.3.0
 visual studio code
@@ -102,7 +113,7 @@ Este boton al dale click nos generara una alerta indicandonos que si estamos seg
 ![image](https://user-images.githubusercontent.com/79348915/223689027-87d128be-93e8-4dd5-a376-25bf0d07f210.png)
 ![image](https://user-images.githubusercontent.com/79348915/223689087-b26b2220-ccaf-43fc-bd79-73ead1a62742.png)
 
-#Como descargar y ponerlo a correr en local
+# Como descargar y ponerlo a correr en local
   1. Descargar Xampp con version de php 7.3
   2. Descargar node con version 9.5.0
   3. Descargar Postgres version 11
