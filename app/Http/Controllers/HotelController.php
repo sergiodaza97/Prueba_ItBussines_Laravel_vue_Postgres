@@ -129,6 +129,8 @@ class HotelController extends Controller
         $response = [];
         $date = Carbon::now()->toDateTimeString();
         try {
+            //Se eliminan registros para no sobreescribirlos
+            $deleted_accomodation = DB::table('accomodation')->where('id_hotel', $request->id_room)->delete();
             //se agrega registro a registrp ya que son varios tipos y acomodaciones
             foreach($request->bedroom as $key){
                 $num_bedrooms = $key['num_bedrooms'];
