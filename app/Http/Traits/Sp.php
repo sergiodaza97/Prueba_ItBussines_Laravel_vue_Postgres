@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 
 trait Sp
 {
-
+    //Funcion para uso facil de sp
     public function executeReadSp(String $sp, Array $params = []):Array{
         $resp = [];
         $status = false;

@@ -11,6 +11,7 @@
 </head>
 <body>
     
+    {{-- Conexion general, se agrega id para poder llamar desde router --}}
     <div id="app"></div>
     <script src={{ asset('js/app.js') }}></script>
 

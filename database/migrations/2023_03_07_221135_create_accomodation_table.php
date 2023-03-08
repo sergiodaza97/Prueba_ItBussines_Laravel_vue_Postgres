@@ -13,6 +13,7 @@ class CreateAccomodationTable extends Migration
      */
     public function up()
     {
+        //Creacion de tabla de acomodaciones
         Schema::create('accomodation', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('num_bedrooms');
@@ -30,6 +31,7 @@ class CreateAccomodationTable extends Migration
      */
     public function down()
     {
+        //En caso que exista la tabla esta se borra y vuelta y se instala
         Schema::dropIfExists('accomodation');
     }
 }

@@ -81,8 +81,10 @@ export default {
     },
 
     methods: {
+        //funcion para generar el guardado del registro de hotel
         saveHotel(){
             var i = 0;
+            //for para validacion de que no exista un hotel igual
             for (i = 0; i < this.n_hotel.length; i++) {
                 if(this.n_hotel[i].name == this.name && this.n_hotel[i].city == this.city && this.n_hotel[i].address == this.address && this.n_hotel[i].nit == this.nit){
                     this.sum = this.sum + 1;
@@ -194,7 +196,7 @@ export default {
                 console.log(err);
             })
         },
-        
+        //funcion para emitir evento de cierre de modal
         Modal(){
             this.$emit("closeModal")
             this.data = {}
@@ -203,6 +205,7 @@ export default {
 }
 </script>
 <style scoped>
+/* Estilos css para uso de la pagina  */
     .div_g{
         padding: 20px
     }

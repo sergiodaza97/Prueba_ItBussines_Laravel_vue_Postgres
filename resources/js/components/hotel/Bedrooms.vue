@@ -87,11 +87,13 @@ export default {
     },
 
     methods: {
+        //Funcion de apertura de input 
         openInput(){
             this.open = this.open + 1
         },
+        // Funcion para ir agregand los datos en un arreglo antes de generar el guardado
         insertBedroom(){
-            console.log(this.id_hotel)
+            //for para validacion de suma y validacion de error
             var i = 0;
             for (i = 0; i < this.bedroom.length; i++) {
                 this.sum = this.bedroom[i].num_bedrooms + this.sum;
@@ -240,17 +242,21 @@ export default {
                     })
             }
         },
+        //funcion para sacar del arreglo los datos de una acomodacion antes de guardar
         deleteBedroom(id){
             this.id_index_delete = this.bedroom.findIndex(index => index.id === id)
             this.bedroom.splice(this.id_index_delete,1)
         },
+        //funcion de cerrado y volver variables a su inicio
         close(){
             this.amount = null
             this.type_room = null
             this.accommodation = null
             this.open = 0
+            this.sum = 0
             this.$emit('closeModal')
         },
+        //Funcion para generar el guardado a base de tipo y acomodacion de habitaciones
         acomodingBedroom(){
             if(this.bedroom.length == 0){
                     this.$swal({
@@ -268,6 +274,7 @@ export default {
                             this.$modal.hide("bedroom_type");
                             this.$emit("closeModal")
                             this.open = 0
+                            this.sum = 0
                             this.$swal({
                                 icon: `${resp.data.response.type}`,
                                 text: `${resp.data.response.content}`,
@@ -290,6 +297,7 @@ export default {
 }
 </script>
 <style scoped>
+/* Estilos css para uso de la pagina  */
     .div_g{
         padding: 20px
     }

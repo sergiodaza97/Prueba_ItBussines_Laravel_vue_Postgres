@@ -13,6 +13,7 @@ class CreateHotelTable extends Migration
      */
     public function up()
     {
+        //Creacion de tabla hotel
         Schema::create('hotel', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
@@ -30,7 +31,8 @@ class CreateHotelTable extends Migration
      * @return void
      */
     public function down()
-    {
+    {   
+        //En caso que exista la tabla esta se borra y vuelta y se instala
         Schema::dropIfExists('hotel');
     }
 }

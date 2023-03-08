@@ -33,6 +33,7 @@
                 <button v-if="open != 0" class="btn btn-primary" @click="test(props.row), $modal.show('bedroom_type')"> Acomodacion </button>
             </template>
         </v-server-table>
+        <!-- Conexcion con el modal create.vue y bedroos.vue se emiten variabes por props y re reciben eventos para el funcionamiento -->
         <create-hotel
         @create="handlerCreate"
         :n_hotel="n_hotel">
@@ -51,6 +52,7 @@
 </template>
 
 <script> 
+//importacion de componentes
 import CreateHotel from "./hotel/Create.vue";
 import AcomodingHotel from "./hotel/Bedrooms.vue";
 export default {
@@ -64,6 +66,7 @@ export default {
 
     data(){
         return {
+            //cabeceros y columnas de la v-server-table
             columns: [
                 "id",
                 "name",
@@ -93,9 +96,11 @@ export default {
         }
     },
     mounted(){
+        //funcion de complementos para correr apenas inicie el proyecto
         this.getComplements()
     },
     methods: {
+        //funcion para traer complementos
         getComplements(){
             axios.get('/api/hotel/getComplements').then(resp => {
                 this.type_bedroom = resp.data[0]
@@ -103,13 +108,13 @@ export default {
                 this.n_hotel = resp.data[2]
             })
             .catch(error => {
-                // loader.hide()
                 this.$swal({
                     icon: 'error',
                     text: 'Ha ocurrido un fallo, intenta nuevamente.',
                 });
             })
         },
+        //Funcion para asignacion de variables y preparacion del modal
         date(data){
             this.id_hotel = data.id;
             this.bedroom = data.bedroom;
@@ -126,6 +131,7 @@ export default {
                 }
             })
         },
+        //Validacion de preparcion
         test(data){
             if(data.id != this.id_button){
                 this.$swal({
@@ -146,7 +152,7 @@ export default {
                 this.loader.hide()
             }
         },
-
+        //funcion para traer datos para la tabla
         requestFunction(data) {
             
             data = {
@@ -157,20 +163,22 @@ export default {
                 loader.hide()
             });
         },
-
+        //funcion para recibir evento de modal
         handlerCreate(){
             this.closeModal()    
         },
-
+        //funcion para refrescar la tabla sin tener que refrescar toda la pagina
         refreshPageTable() {
             if (this.$refs.hotel) {
                    this.$refs.hotel.refresh()  
             }
         },
+        //funcion para refrescar la tabla
         closeModal() {
             this.refreshPageTable();
             this.data = {};
         },
+        //funcion para generar el borrado del hotel
         deleteHotel(id_hotel){
             this.$swal({
                 title:  `¿ Realmente deseas Eliminar este hotel ?`,
@@ -211,6 +219,7 @@ export default {
 }
 </script>
 <style scoped>
+/* Estilos css para uso de la pagina  */
     .title{
         padding: 20px 20px 20px 0px;
         font-size: 40px;
