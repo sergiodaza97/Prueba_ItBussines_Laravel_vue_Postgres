@@ -109,7 +109,7 @@ Este boton al dale click nos generara una alerta indicandonos que si estamos seg
   4. Descargue composer
   5. Abrimos xampp, entramos a htdocs y creamos una carpeta en la cual ira nuestro repositorio
   6. abrimos cualquier editor de codigo "Recomiendo Visual Studio Code" 
-  7. habra la terminal y agregue el comando git clone #ingresa url y precione enter
+  7. habra la terminal y agregue el comando git clone https://github.com/sergiodaza97/Prueba_ItBussines_Laravel_vue_Postgres.git y precione enter
   8. Una vez termine de descargar corra el comando php artisan migration
   9. corra comando npm run watch
   10. habra una terminal alternativa y corra comando php artisan serve
