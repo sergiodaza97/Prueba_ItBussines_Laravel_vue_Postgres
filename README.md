@@ -45,6 +45,10 @@ Para la arquitectura se implementaron conceptos de patron repositorio para no de
 - node 9.5.0
 - composer 2.5.4
 
+# Probar sin descargar
+Se crea instancia en aws con dominio gratuito para poder visualizar
+http://18.191.237.75:8000
+
 # Manual de uso 
 Vista principal: 
 En esta se encontraran con una tabla en la cual se veran reflejados todos los registros de creacion de hoteles que no se hayan eliminado previamente.
